@@ -1,5 +1,5 @@
 # Simple E-Commerce Application
-Build a small and very simple e-commerce application
+A small and very simple e-commerce application
 
 # Features:
 1. Customer forms
@@ -21,6 +21,8 @@ Admin Sign Up page http://localhost:3000/admins/sign_up
 
 7. Only Admin user can add, edit and delete products
 
-# Setup e-commerce
-1. Go to "/Source code/e-commerce"
-2. Run the below command in console (terminal)to start the ecommerce application
+# Setup
+Run the below command in console (terminal) to start the ecommerce application.
+```
+./run
+```
