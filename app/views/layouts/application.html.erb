@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Walmart</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= render 'layouts/header' %>
+
+  <% flash.each do |key, value| %>
+      <div class="message">
+        <div class="alert alert-<%= key %>" role="alert">
+          <a class="close" href="#">&times</a>
+          <strong><%= value %></strong>
+        </div>
+      </div>
+  <% end %>
+  <%= yield %>
+
+</body>
+</html>

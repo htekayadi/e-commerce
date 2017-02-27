@@ -1,0 +1,55 @@
+.bg-aqua {
+  background-color: $aqua-marine;
+  opacity: 0.8;
+}
+
+.bg-none {
+  background: none;  
+}
+
+.font-h1{
+  font-size: 36px;
+  color: $aqua-marine;
+}
+
+a {
+    color: $aqua-marine;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+th {
+  color: #000000;
+  background: #00e699;
+  opacity: 0.5;
+}
+
+td {
+  color: #393939;
+
+  a {
+    margin-left: 0;
+  }
+}
+
+.btn-aqua{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: $aqua-marine;
+  border-color: $aqua-marine2;
+  color: $black;
+  opacity: 0.5;
+  font-weight: medium;
+}

@@ -1,0 +1,63 @@
+<div class="product">
+  <p class="font-h1">
+    Listing Products
+  </p>
+  
+  <% if admin_signed_in? %>
+    <%= link_to 'Add Product', new_product_path, class: "btn btn-aqua" %>
+  <% end %>
+  
+
+  <% @products.each do |product| %>
+  
+    <div class="add-to-cart item-row">
+      <div class="col-md-2">
+        <td><%= image_tag("images-#{(product.id%8)+1}", class: "image-url") %></td>
+      </div>
+      <div class="col-md-3">
+        <td>
+          <br>
+          <ul><%= link_to product.name, product %></ul>
+          <ul><%= product.description %></ul> 
+        </td>
+      </div>
+      <div class="col-md-2">
+        <h2><%= number_to_currency(product.price) %></h2>
+      </div>
+      <%= form_for @order_line do |f| %>
+          <div class="col-md-2">
+            <% if customer_signed_in? %>
+
+              
+              <label>Quantity:</label>
+              <%= f.number_field :qty, value: 1, class: "form-control", min: 1 %>
+              
+              <%= f.submit "Add to Cart", class: "btn btn-cart" %>
+              <%= f.hidden_field :product_id, value: product.id %>
+              <%= f.hidden_field :unit_price, value: product.price %>
+            <% end %>
+
+           
+          
+          <% if admin_signed_in? %>
+            <td>
+              <br>
+              <ul>
+              <% if(product.status) %>
+                Enable
+              <% else %>
+                Disable
+              <% end %>  
+              </ul>
+              <ul><%= link_to 'Edit', edit_product_path(product) %></ul>
+              <ul><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></ul>
+            </td>
+          <% end %> 
+          </div> 
+      <% end %>
+    </div>
+    <!-- </div> -->
+  <% end %>
+</div>
+
+
